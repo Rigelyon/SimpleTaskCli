@@ -52,7 +52,6 @@ public class JsonHandler {
         } catch (IOException e) {
             System.err.println("Error reading file: " + e);
         }
-        System.out.println(loadedTask);
         return loadedTask;
     }
 }

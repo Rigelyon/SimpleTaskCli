@@ -30,7 +30,11 @@ public class TaskManager {
     }
 
     public void deleteTask(int id) {
-
+        try {
+            tasks.removeIf(task -> task.getId() == id);
+        } catch (Exception e) {
+            System.err.println("Error while trying to remove task: " + e);
+        }
     }
 
 }

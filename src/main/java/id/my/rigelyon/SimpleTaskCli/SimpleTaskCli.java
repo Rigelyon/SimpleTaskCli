@@ -78,13 +78,7 @@ public class SimpleTaskCli {
                     System.err.println("Usage: SimpleTaskCli delete [task-id]");
                     System.exit(1);
                 }
-                try {
-                    int index = Integer.parseInt(args[1]);
-                    taskManager.deleteTask(index);
-                } catch (NumberFormatException e) {
-                    System.err.println("Invalid index");
-                    System.exit(1);
-                }
+                taskManager.deleteTask(Integer.parseInt(args[1]));
                 break;
             case "mark-in-progress":
                 if (args.length < 2) {

@@ -3,7 +3,8 @@ package id.my.rigelyon.SimpleTaskCli;
 public enum Status {
     TODO("todo"),
     DONE("done"),
-    IN_PROGRESS("in-progress"),;
+    IN_PROGRESS("in-progress"),
+    ;
 
     private final String value;
 
@@ -18,5 +19,15 @@ public enum Status {
     @Override
     public String toString() {
         return value;
+    }
+
+    public static Status fromLabel(String label) {
+        Status status = null;
+        for (Status s : Status.values()) {
+            if (s.value.equals(label)) {
+                status = s;
+            }
+        }
+        return status;
     }
 }
